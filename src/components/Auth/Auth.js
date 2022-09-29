@@ -16,14 +16,13 @@ export default function Auth() {
 
   const submitAuth = async () => {
     // TODO
-    try {
-      const user = await authUser(email, password, type);
-      setUser(user);
-    } catch (e) {
-      // eslint-disable-next-line no-console
-      console.error(e);
-    }
+    const userData = await authUser(email, password, type);
+    setUser(userData);
+
+    setEmail('');
+    setPassword('');
   };
+  
 
   return (
     <div className="auth box">
